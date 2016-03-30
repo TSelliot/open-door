@@ -167,4 +167,7 @@ module.exports = StyleSheet.create({
   pullRight: {
     paddingRight: 10,
   },
+  standardText: {
+    fontSize: 17,
+  },
 });
