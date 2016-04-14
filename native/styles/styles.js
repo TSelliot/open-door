@@ -2,6 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
 const radius = 50;
+const navBarHeight = 200;
 module.exports = StyleSheet.create({
   // General BG Style
   bg: {
@@ -16,6 +17,11 @@ module.exports = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  eventDetailComponent: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'stretch',
+  },
   imageContainer: {
     flex: 1,
   },
@@ -27,6 +33,7 @@ module.exports = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     margin: 20,
+    marginTop: 0,
   },
   centerContainerNoMargin: {
     flex: 1,
@@ -36,6 +43,18 @@ module.exports = StyleSheet.create({
   scrollView: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+  },
+  setDoorContainer: {
+    borderColor: '#FFF3',
+    borderWidth: 1,
+    alignItems: 'center',
+    alignSelf: 'center',
+    width: 200,
+    marginBottom: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderRadius: 4,
+    backgroundColor: '#0002',
   },
   // Nav
   tabBar: {
@@ -200,34 +219,36 @@ module.exports = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: 'white',
   },
-  checkboxEmpty: {
+  checkbox: {
     width: 20,
     height: 20,
+    borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#007AFF',
+    borderColor: '#FFF',
   },
   checkboxFilled: {
-    width: 20,
-    height: 20,
-    borderWidth: 1,
-    borderColor: '#007AFF',
-    backgroundColor: '#007AFF',
+    backgroundColor: '#FFF',
   },
   // Buttons
   socialF: {
     justifyContent: 'center',
-    flexDirection: 'row',
-    padding: 50,
+    flex: 1,
     borderTopWidth: 1,
     borderBottomWidth: 1,
-    borderColor: '#DDD',
+    borderColor: '#DDD3',
+    alignItems: 'center',
   },
   socialG: {
     justifyContent: 'center',
-    flexDirection: 'row',
-    padding: 50,
+    flex: 1,
     borderBottomWidth: 1,
-    borderColor: '#DDD',
+    borderColor: '#DDD3',
+    alignItems: 'center',
+  },
+  socialText: {
+    fontFamily: 'DroidSans',
+    color: '#FFFB',
+    fontSize: 25,
   },
   categoryButton: {
     justifyContent: 'center',
@@ -251,6 +272,13 @@ module.exports = StyleSheet.create({
   navButtonMargin: {
     marginHorizontal: 20,
   },
+  // Door-Specific
+  noHost: {
+    textAlign: 'center',
+    color: '#FFF3',
+    bottom: 175,
+    fontSize: 17,
+  },
   // Profile and Group Pic
   profilePic: {
     width: radius * 2,
@@ -259,7 +287,7 @@ module.exports = StyleSheet.create({
     flex: 1,
   },
   feedEventHostPic: {
-    marginLeft: 40,
+    marginLeft: 10,
     alignSelf: 'flex-start',
   },
   inviteeBubbles: {
@@ -349,5 +377,9 @@ module.exports = StyleSheet.create({
   fullScreen: {
     width,
     height,
+  },
+  fullScreenUnderNavbar: {
+    width,
+    height: height - navBarHeight,
   },
 });
